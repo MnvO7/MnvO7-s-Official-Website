@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Private-Chat-Room</title>
+    <link rel="stylesheet" href="chatapp/index.css">
+<style>
+
+body {
+    background-color: #eee;
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    display:flex;
+    justify-content: center;
+    height: auto;
+    align-content: center;
+    padding-top: 70px;
+}
+.title p{
+    color:gray;
+}
+.title p3{
+color: white;
+}
+.container{
+    display: inline-block;
+    text-align: center;
+    background: white;
+    padding-top: 70px;
+    transition: 0.3s;
+box-shadow: 12px 13px 14px rgba(0, 0, 0, 0.2);
+
+}
+
+input {
+display: inline-block;
+width: 320px;
+height: 8vh;
+color: white;
+margin-top: 20%;
+background: black;
+border-radius: 0px;
+	box-shadow: 10px 3px 20px 5px rgba(0,0,0,0.05);
+border: none;
+opacity: 0.5;
+}
+.btn{
+flex-basis: 20%;
+    border: none;
+    position: relative;
+    bottom: -60px;
+    background: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 0px;
+    color: black;
+    opacity: 0.5;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+button{
+
+  display: inline-block;
+  min-width: $button-width;
+  margin: 20px auto;
+  background: $btn-bg;
+  color: $text-light;
+  font-size: 1.2em;
+  padding: 1em;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  transition: border-radius linear 0.05s, width linear 0.05s;
+
+}
+
+#messages{
+    padding-bottom: 5%;
+}
+
+li {
+
+ list-style-type: none;
+border-radius: 2px;
+margin-bottom: 5%;
+color: black;
+	max-width: 80%;
+height: 6vh;
+	background: #fff;
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+	padding: 10px;
+
+}
+
+@media(max-width: 700px){
+    .title p{
+        font-size: 12px;
+    }
+@media(max-width: 700px){
+    .title h1{
+        font-size: 16px;
+    }
+li span {
+    color: black;
+}
+
+#chat {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#message-form {
+    text-align: center;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.sent {
+
+ list-style-type: none;
+margin-bottom: 5%;
+color: black;
+	max-width: 80%;
+height: 6vh;
+	background: #eee;
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+	padding: 10px;
+
+}
+.sent span {
+    color: black;
+    text-align: center;
+    border: none;
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: light gray;
+
+  top: 78px;
+
+color: white;
+  overflow-x: hidden;
+  transition: 0.7s;
+
+ padding-top: 60px;
+
+  text-align:center;
+	box-shadow: 2px 0px 10px 3px rgba(0,0,0,0.1);
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.open{
+position: relative;
+top: -70px;
+left: -90px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="title">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="chat.html">Chat-Room</a>
+
+<a href="#">More Soon</a>
+
+</div>
+<span style="font-size:30px;cursor:pointer" class= "open"
+onclick="openNav()">&#9776; </span>
+
+
+
+        <p3>Private-Chat-Room</p3>
+
+<p>Private-Chat-Room</p>
+
+        <p>Please be respectful to Others <br> All Messages Are Encrypted. </p>
+        </div>
+        <div class="cm">
+      <div id="chat">
+        <!-- messages will display here -->
+        <ul id="messages"></ul>
+      </div>
+        <!-- form to send message -->
+        <form id="message-form">
+
+          <input id="message-input" placeholder="Type Your Message Here…" type="text" maxlength="30">
+
+            <button id="message-input" type="submit" class="btn">Send</button>
+
+</form>
+      </div>
+      </div>
+      </div>
+    <!-- scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="index.js"></script>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "50%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+  </body>
+</html>
