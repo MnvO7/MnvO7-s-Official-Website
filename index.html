@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Private-Chat-Room</title>
+    <link rel="stylesheet" href="chatapp/index.css">
+<style>
+
+body {
+    background-color: #eee;
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    display:flex;
+    justify-content: center;
+    height: 123vh;
+    align-content: center;
+    padding-top: 70px;
+}
+.p{
+color:gray;
+}
+.title p3{
+color: white;
+}
+.title{
+text-align: center;
+}
+.container{
+    display: inline-block;
+    text-align: center;
+    background: white;
+    padding-top: 70px;
+    transition: 0.3s;
+box-shadow: 12px 13px 14px rgba(0, 0, 0, 0.2);
+
+}
+
+input {
+display: inline-block;
+width: 61vh;
+height: 8vh;
+color: white;
+
+background: black;
+border-radius: 0px;
+	box-shadow: 10px 3px 20px 5px rgba(0,0,0,0.05);
+border: none;
+opacity: 0.5;
+}
+
+button{
+
+  display: inline-block;
+  min-width: $button-width;
+  margin: 20px auto;
+  background: $btn-bg;
+  color: $text-light;
+  font-size: 1.2em;
+  padding: 1em;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  transition: border-radius linear 0.05s, width linear 0.05s;
+
+}
+
+#messages{
+    padding-bottom: 5%;
+}
+
+li {
+
+ list-style-type: none;
+border-radius: 2px;
+margin-bottom: 5%;
+color: black;
+	max-width: 80%;
+height: 6vh;
+	background: #fff;
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+	padding: 10px;
+
+}
+
+@media(max-width: 700px){
+    .title p{
+        font-size: 12px;
+    }
+@media(max-width: 700px){
+    .title h1{
+        font-size: 16px;
+    }
+li span {
+    color: black;
+}
+
+#chat {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#message-form {
+    text-align: center;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.sent {
+
+ list-style-type: none;
+margin-bottom: 5%;
+color: black;
+	max-width: 80%;
+height: 6vh;
+	background: #eee;
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+	padding: 10px;
+
+}
+.sent span {
+    color: black;
+    text-align: center;
+    border: none;
+}
+.btn{
+display: inline-block;
+border-radius: 0px;
+width: 62.5vh;
+background: white;
+color: white;
+   font-family: 'Poppins', sans-serif;
+
+}
+
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  background-color: light gray;
+
+  top: 78px;
+
+color: white;
+  overflow-x: hidden;
+  transition: 0.7s;
+
+ padding-top: 60px;
+
+  text-align:center;
+	box-shadow: 2px 0px 10px 3px rgba(0,0,0,0.1);
+
+}
+
+.content{
+    flex-basis: 31%;
+    background: #eee;
+    border-radius: 14px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+	box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.05);
+
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.open{
+position: relative;
+top: -70px;
+left: -90px;
+}
+.title2 p{
+color: red;
+opacity: 0.5;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.fa {
+color: gray;
+text-decoration: none;
+font-size: 18px;
+margin: 0.3em;
+
+}
+.icons p{
+color: gray;
+opacity: 0.5;
+}
+
+</style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="title">
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="index.html">Home</a>
+  <a href="chat.html">Chat-Room</a>
+
+<a href="#">More Soon</a>
+
+</div>
+<span style="font-size:30px;cursor:pointer" class= "open"
+onclick="openNav()">&#9776; </span>
+
+        <p3>Private-Chat-Room</p3>
+        <p>Secure And Safe <br> Privacy And Security Is My First priority </p>
+
+<div class="content">
+<p>Welcome To My Website
+<br>Glad To See You Here!!</p>
+</div>
+
+<div class="content">
+<p>Hope You Like My Messaging Web App :) <br> And Other Projects.</p>
+</div>
+
+<div class="content">
+<p>You Can Support Me By Following To My Social Media Handles <br> Help Me Make This Community Bigger</p>
+</div>
+
+<div class="content">
+<p>All Source Codes Are Available On <br> GitHub</p>
+
+</div>
+<div class="icons">
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-instagram"></a>
+<p>Follow Me!! </p>
+</div>
+
+      </div>
+      </div>
+    <!-- scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "50%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+  </body>
+</html>
